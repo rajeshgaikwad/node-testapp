@@ -16,6 +16,7 @@ Testing streaming response from node
 
 
     ## Setting up heroku
+    http://polar-eyrie-5007.herokuapp.com/ | git@heroku.com:polar-eyrie-5007.git
 
 
 ## Benchmark & Test
