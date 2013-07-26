@@ -1,4 +1,4 @@
-# ODAP Runtime
+# Test app
 
 ## About
 
@@ -7,23 +7,25 @@ Testing streaming response from node
 ## Install
 
 
-    ## Prerequisite
+### Prerequisite
     Node installed
 
 
-    ## Setting up Repositories
+### Setting up Repositories
 
 
 
-    ## Setting up heroku
+### Setting up heroku
     http://polar-eyrie-5007.herokuapp.com/ | git@heroku.com:polar-eyrie-5007.git
-
+    
+### Test Heroku
+    http://polar-eyrie-5007.herokuapp.com/hello/testme
 
 ## Benchmark & Test
-    ##Unit test
+###Unit test
     mocha
 
-    ##Functional Test
+###Functional Test
     curl http://localhost:3000/hello/testme
     Starting chunked Response
     Hello
@@ -32,12 +34,12 @@ Testing streaming response from node
 
 
     
- ## Benchmarks
-    ## Running benchmark
+### Benchmarks
+#### Running benchmark
         ab -n 100 -c 100 -d -S   http://localhost:3000/hello/testme
 
 
-    ## Results
+#### Results
         This is ApacheBench, Version 2.3 <$Revision: 655654 $>
         Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
         Licensed to The Apache Software Foundation, http://www.apache.org/
