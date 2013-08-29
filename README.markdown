@@ -9,6 +9,7 @@ Testing streaming response from node
 
 ### Prerequisite
     Node installed
+    mocha installed
 
 
 ### Setting up Repositories
