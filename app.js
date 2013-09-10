@@ -37,11 +37,11 @@ app.get('/hello/:name', function(req,res){
   res.write("Starting chunked Response\n");
   res.write('Hello\n');
   setTimeout(function(){
-    res.write(' After 5 sec World\n');
+    res.write(' After 1 sec World\n');
     name = req.params.name;
     res.write('     Name:' + name +' \n');
     res.end();
-  }, 5000);
+  }, 1000);
 
 });
 
