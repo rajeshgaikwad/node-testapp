@@ -36,10 +36,13 @@ app.post('/k4', function(req,res){
     ,'Transfer-Encoding': 'chunked'
     ,'Set-Cookie':'test=test'
   });
-  res.write('Hello testit\n');
+  res.write('{"a":"b"}');
   res.end();
 });
 
+app.get('/loaderio-ab099d3c2087287f3cf53cbeeb69693f.txt', function(req,res){
+ res.send("loaderio-ab099d3c2087287f3cf53cbeeb69693f");
+});
 app.get('/t', function(req,res){
   res.writeHead(200, {
     'Content-Type': 'text/plain'
