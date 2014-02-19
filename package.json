@@ -10,7 +10,6 @@
   "npm": "1.2.x"
   },
   "dependencies": {
-    "express": "*",
-    "jade": "*"
+    "express": "*"
   }
 }
