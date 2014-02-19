@@ -31,7 +31,7 @@ app.get('/hello/:name', function(req,res){
 });
 
 app.post('/k4', function(req,res){
-  console.log("JSON:" +  JSON.stringify(req[body]));
+  console.log("JSON:" +  JSON.stringify(req.body));
   res.writeHead(200, {
     'Content-Type': 'text/plain'
     ,'Transfer-Encoding': 'chunked'
