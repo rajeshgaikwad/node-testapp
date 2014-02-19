@@ -13,26 +13,21 @@ var app = express();
 
 // all environments
 app.set('port', process.env.PORT || 3000);
-app.set('views', __dirname + '/views');
-app.set('view engine', 'jade');
-app.all('*', function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
-    next();
-});
+//app.set('views', __dirname + '/views');
+//app.set('view engine', 'jade');
 app.use(express.favicon());
-app.use(express.logger('dev'));
+//app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
-app.use(express.cookieParser('your secret key here'));
-app.use(express.session());
-app.use(app.router);
-app.use(express.static(path.join(__dirname, 'public')));
+//app.use(express.cookieParser('your secret key here'));
+//app.use(express.session());
+//app.use(app.router);
+//app.use(express.static(path.join(__dirname, 'public')));
 
 // development only
-if ('development' == app.get('env')) {
-  app.use(express.errorHandler());
-}
+//if ('development' == app.get('env')) {
+  //app.use(express.errorHandler());
+//}
 
 app.get('/hello/:name', function(req,res){
   res.writeHead(200, {
@@ -50,6 +45,16 @@ app.get('/hello/:name', function(req,res){
 
 });
 
+app.post('/k4', function(req,res){
+  res.writeHead(200, {
+    'Content-Type': 'text/plain'
+    ,'Transfer-Encoding': 'chunked'
+    ,'Set-Cookie':'test=test'
+  });
+  res.write('Hello testit\n');
+  res.end();
+});
+
 app.get('/t', function(req,res){
   res.writeHead(200, {
     'Content-Type': 'text/plain'
@@ -58,8 +63,6 @@ app.get('/t', function(req,res){
   });
   res.write('Hello testit\n');
   res.end();
-
- 
 });
 
 server =http.createServer(app);
@@ -69,8 +72,9 @@ server.listen(app.get('port'), function(){
 
 
 
-server.on('connection', function(socket) {
-    console.log("A new connection was made by a client.");
-      socket.setTimeout(30 * 1000); 
-        // 30 second timeout. Change this as you see fit.
- })
+//server.on('connection', function(socket) {
+  
+//console.log("A new connection was made by a client.");
+//..      socket.setTimeout(1 * 1000); 
+//        // 30 second timeout. Change this as you see fit.
+// })
